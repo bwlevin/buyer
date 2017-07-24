@@ -14,6 +14,7 @@ contract MetaCoin {
 	string possession;
 	address public owner;
 	uint cost;
+	bool delivered;
 
 	event Transfer(address indexed _from, address indexed _to, uint256 _value);
 	event Delivery(string _old, string _new, uint _time);
@@ -24,6 +25,7 @@ contract MetaCoin {
 		possession = "";
 		owner = tx.origin;
 		cost = 0;
+		delivered = false;
 	}
 
 	function sendCoin(address receiver, uint amount) returns(bool sufficient) {
@@ -46,7 +48,7 @@ contract MetaCoin {
 	function takeDelivery(address receiver, string new_possess) returns(bool success) {
 		Delivery(possession, new_possess, now);
 		possession = new_possess;
-		if (balances[msg.sender] < cost) return false;
+		if (balances[msg.sender] < cost) throw;
 		paySupplier(receiver, cost);
 		return true;
 	}
@@ -91,5 +93,9 @@ contract MetaCoin {
 
 	function setCost(uint val) {
 		cost = val;
+	}
+
+	function getCost() returns(uint) {
+		return cost;
 	}
 }

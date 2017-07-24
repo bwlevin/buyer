@@ -40,6 +40,7 @@ window.App = {
       account = accounts[0];
 
       self.refreshBalance();
+      self.getCost();
     });
   },
 
@@ -93,6 +94,22 @@ window.App = {
     }).catch(function(e) {
       console.log(e);
       self.setStatus("Error fetching quality value. See log.");
+    });
+  },
+
+  getCost: function() {
+    var self = this;
+
+    var meta;
+    MetaCoin.deployed().then(function(instance) {
+      meta = instance;
+      return meta.getCost.call();
+    }).then(function(value) {
+      var current_cost = document.getElementById("current_cost");
+      current_cost.innerHTML = value.valueOf();
+    }).catch(function(e) {
+      console.log(e);
+      self.setStatus("Error fetching cost. See log.");
     });
   },
 
