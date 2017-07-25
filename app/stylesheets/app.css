@@ -12,7 +12,7 @@ label {
 }
 
 input {
-  width: 294px;
+  width: 240px;
   padding: 5px;
   font-size: 16px;
 }
@@ -23,10 +23,9 @@ button {
 }
 
 h1, h2 {
-  display: inline-block;
   vertical-align: middle;
   margin-top: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 h2 {
@@ -44,29 +43,31 @@ h3 {
 
 #pagewrap {
   padding: 5px;
-  width: 1024px;
+  width: 1120px;
   margin: 20px auto;
 }
 header {
-  height: 140px;
+  height: 200px;
+  width: 1100px;
   padding: 0 15px 80px;
 }
 #content {
-  width: 300px;
+  width: 240px;
   float: left;
   padding: 5px 15px;
 }
 
 #middle {
-  width: 300px; /* Account for margins + border values */
+  width: 240px; /* Account for margins + border values */
   float: left;
   padding: 5px 15px;
   margin: 0px 5px 5px 5px;
 }
 
 #sidebar {
-  width: 300px;
+  width: 240px;
   padding: 5px 15px;
+  margin-bottom: 10px;
   float: left;
 }
 footer {
