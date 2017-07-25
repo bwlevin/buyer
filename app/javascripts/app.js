@@ -71,7 +71,7 @@ window.App = {
       if (value == true) {
         state = "COST APPROVED. AWAITING SHIPMENT";
       }
-      else if (document.getElementById("current_cost").value != 0 && value == false) {
+      else if (document.getElementById("current_cost").innerHTML != 0) {
         state = "AWAITING COST APPROVAL";
       }
       document.getElementById("state").innerHTML = state;
@@ -371,6 +371,19 @@ window.App = {
       console.log(e);
       if(alert("Error taking delivery. See log. Ensure sufficient funds have been added and try again.")){}
       else window.location.reload();
+    });
+  },
+
+  reset: function() {
+    var self = this;
+
+    var meta;
+    MetaCoin.deployed().then(function(instance) {
+      meta = instance;
+      return meta.reset({from:account});
+    }).catch(function(e){
+      console.log(e);
+      self.setStatus("Reset failed; see log");
     });
   }
 };
