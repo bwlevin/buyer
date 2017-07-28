@@ -12,7 +12,7 @@ label {
 }
 
 input {
-  width: 240px;
+  width: 260px;
   padding: 5px;
   font-size: 16px;
 }
@@ -43,29 +43,29 @@ h3 {
 
 #pagewrap {
   padding: 5px;
-  width: 1120px;
+  width: 1220px;
   margin: 20px auto;
 }
 header {
   height: 200px;
-  width: 1100px;
+  width: 1200px;
   padding: 0 15px 80px;
 }
 #content {
-  width: 240px;
+  width: 265px;
   float: left;
   padding: 5px 15px;
 }
 
 #middle {
-  width: 240px; /* Account for margins + border values */
+  width: 265px; /* Account for margins + border values */
   float: left;
   padding: 5px 15px;
   margin: 0px 5px 5px 5px;
 }
 
 #sidebar {
-  width: 240px;
+  width: 265px;
   padding: 5px 15px;
   margin-bottom: 10px;
   float: left;
